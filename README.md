@@ -3,8 +3,8 @@ ValidationProject
 Программа представляет собой сайт, валидирующий данные введеные в формы со стороны клиента и на серверной стороне. (Проверить проще всего отключив JS)
 
 Для деплоя под Linux необходимо установить следующее ПО:
-1)MonoDevelop sudo apt-get install mono-xsp
-2)XSP (это облегченный Web-сервер) sudo apt-get install mono-xsp
+1)MonoDevelop: sudo apt-get install mono-xsp
+2)XSP (это облегченный Web-сервер): sudo apt-get install mono-xsp
 Либо Apache и специальный плагин:
 apt-get install libapache2-mod-mono mono-apache-server2
 apt-get install mono-devel
