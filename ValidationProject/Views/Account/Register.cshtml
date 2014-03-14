@@ -1,0 +1,67 @@
+﻿@model ValidationProject.Models.RegisterModel
+@{
+    ViewBag.Title = "Регистрация";
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+    <h2>Создание новой учетной записи.</h2>
+</hgroup>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+    <fieldset>
+        <legend>Форма регистрации</legend>
+        <ol>
+            <li>
+                @Html.LabelFor(m => m.UserName)
+                @Html.TextBoxFor(m => m.UserName)
+                @Html.ValidationMessageFor(m => m.UserName)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Password)
+                @Html.PasswordFor(m => m.Password)
+                @Html.ValidationMessageFor(m => m.Password)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.ConfirmPassword)
+                @Html.PasswordFor(m => m.ConfirmPassword)
+                @Html.ValidationMessageFor(m => m.ConfirmPassword)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Email)
+                @Html.TextBoxFor(m => m.Email)
+                @Html.ValidationMessageFor(m => m.Email)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Age)
+                @Html.EditorFor(m => m.Age)
+                @Html.ValidationMessageFor(m => m.Age)
+                
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Realname)
+                @Html.TextBoxFor(m => m.Realname)
+                @Html.ValidationMessageFor(m => m.Realname)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.UserInfo)
+                @Html.TextBoxFor(m => m.UserInfo)
+                @Html.ValidationMessageFor(m => m.UserInfo)
+            </li>
+        </ol>
+        <input type="submit" value="Регистрация" />
+    </fieldset>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+<script type="text/javascript">
+    $('input').each(function () {
+        $(this).rules('remove', 'range');
+    });
+</script>
